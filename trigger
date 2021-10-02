@@ -4,15 +4,15 @@ trigger UpdatAccount on Account (before insert,before update) {
     if(Trigger.isUpdate)
     {
       integer count=0;
-		for(Account aa:Trigger.new)
+		for(Account account:Trigger.new)
         {
-            if(aa.AnnualRevenue==100)
+            if(account.AnnualRevenue==100)
             {
-                aa.Name='Update from Trigger';
+                account.Name='Update from Trigger';
                 count++;
             }
         }
-      System.debug(count);
+   
     }
     	
 }
